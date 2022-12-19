@@ -83,7 +83,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     if (!setting.autoAI) {
         if (isCmd2) {
             switch(command) { 
-                case 'ai':
+                case 'openai':
                     try {
                         if (setting.keyopenai === 'ISI_APIKEY_OPENAI_DISINI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
                         if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`)
