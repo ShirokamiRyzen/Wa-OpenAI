@@ -83,10 +83,10 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
     if (!setting.autoAI) {
         if (isCmd2) {
             switch(command) { 
-                case 'openai':
+                case 'ai':
                     try {
                         if (setting.keyopenai === 'ISI_APIKEY_OPENAI_DISINI') return reply('Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys')
-                        if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`)
+                        if (!text) return reply(`Error`)
                         const configuration = new Configuration({
                             apiKey: setting.keyopenai,
                         });
@@ -113,13 +113,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                         if (m.chat.endsWith('broadcast')) return
                         if (m.isBaileys) return
                         if (!(budy.toLowerCase())) return
-                        if (argsLog || isCmd2 && !m.isGroup) {
-                            // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
-                            console.log(chalk.black(chalk.bgRed('[ ERROR ]')), color('command', 'turquoise'), color(argsLog, 'turquoise'), color('tidak tersedia', 'turquoise'))
-                            } else if (argsLog || isCmd2 && m.isGroup) {
-                            // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
-                            console.log(chalk.black(chalk.bgRed('[ ERROR ]')), color('command', 'turquoise'), color(argsLog, 'turquoise'), color('tidak tersedia', 'turquoise'))
-                            }
+                        
                     }
                 }
             }
